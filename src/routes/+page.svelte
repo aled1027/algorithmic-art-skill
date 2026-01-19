@@ -1,6 +1,4 @@
 <script lang="ts">
-  import OrbitingCircle from '$lib/animations/OrbitingCircle.svelte';
-  import ClickCircles from '$lib/animations/ClickCircles.svelte';
   import FlowFieldLandscape from '$lib/animations/FlowFieldLandscape.svelte';
   import GeometricTessellation from '$lib/animations/GeometricTessellation.svelte';
   import CellularAutomata from '$lib/animations/CellularAutomata.svelte';
@@ -23,8 +21,6 @@
     { name: 'Brush Stroke Simulator', component: BrushStrokeSimulator },
     { name: 'Generative Topography', component: GenerativeTopography },
     { name: 'Fractal Flame Renderer', component: FractalFlame },
-    { name: 'Orbiting Circle', component: OrbitingCircle },
-    { name: 'Click Circles', component: ClickCircles }
   ];
 </script>
 
