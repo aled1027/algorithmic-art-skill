@@ -143,9 +143,9 @@ Each artwork follows this p5.js-in-Svelte pattern:
 |---|---------|------------|-----------|---------|--------|
 | 1 | Flow Field Landscape | ✅ | ✅ | ✅ | Complete |
 | 2 | Recursive Tree Generator | ✅ | ✅ | ✅ | Complete |
-| 3 | Voronoi Stained Glass | ⬜ | ⬜ | ⬜ | Not started |
+| 3 | Voronoi Stained Glass | ✅ | ✅ | ✅ | Complete |
 | 4 | Particle Galaxy | ✅ | ✅ | ✅ | Complete |
-| 5 | Generative Topography | ⬜ | ⬜ | ⬜ | Not started |
+| 5 | Generative Topography | ✅ | ✅ | ✅ | Complete |
 | 6 | Geometric Tessellation | ✅ | ✅ | ✅ | Complete |
 | 7 | Audio-Reactive Waveforms | ✅ | ✅ | ✅ | Complete |
 | 8 | Brush Stroke Simulator | ⬜ | ⬜ | ⬜ | Not started |

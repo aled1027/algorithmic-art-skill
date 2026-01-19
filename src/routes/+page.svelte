@@ -7,14 +7,18 @@
   import RecursiveTree from '$lib/animations/RecursiveTree.svelte';
   import ParticleGalaxy from '$lib/animations/ParticleGalaxy.svelte';
   import AudioWaveforms from '$lib/animations/AudioWaveforms.svelte';
+  import GenerativeTopography from '$lib/animations/GenerativeTopography.svelte';
+  import VoronoiStainedGlass from '$lib/animations/VoronoiStainedGlass.svelte';
 
   const animations = [
     { name: 'Flow Field Landscape', component: FlowFieldLandscape },
+    { name: 'Voronoi Stained Glass', component: VoronoiStainedGlass },
     { name: 'Recursive Tree Generator', component: RecursiveTree },
     { name: 'Geometric Tessellation', component: GeometricTessellation },
     { name: 'Particle Galaxy', component: ParticleGalaxy },
     { name: 'Cellular Automata', component: CellularAutomata },
     { name: 'Audio-Reactive Waveforms', component: AudioWaveforms },
+    { name: 'Generative Topography', component: GenerativeTopography },
     { name: 'Orbiting Circle', component: OrbitingCircle },
     { name: 'Click Circles', component: ClickCircles }
   ];
