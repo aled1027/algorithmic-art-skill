@@ -1,27 +1,27 @@
 <script lang="ts">
-  import { onMount } from "svelte"
-  import p5 from "p5"
+  import { onMount } from 'svelte';
+  import p5 from 'p5';
 
-  let container: HTMLDivElement
-  let p5Instance: p5 | null = null
+  let container: HTMLDivElement;
+  let p5Instance: p5 | null = null;
 
   onMount(() => {
     if (container) {
       p5Instance = new p5((sketch: p5) => {
-        const circles: { x: number; y: number; size: number; color: p5.Color }[] = []
+        const circles: { x: number; y: number; size: number; color: p5.Color }[] = [];
 
         sketch.setup = () => {
-          sketch.createCanvas(container.clientWidth, container.clientHeight)
-        }
+          sketch.createCanvas(container.clientWidth, container.clientHeight);
+        };
 
         sketch.draw = () => {
-          sketch.background(30)
-          sketch.noStroke()
+          sketch.background(30);
+          sketch.noStroke();
           for (const circle of circles) {
-            sketch.fill(circle.color)
-            sketch.ellipse(circle.x, circle.y, circle.size)
+            sketch.fill(circle.color);
+            sketch.ellipse(circle.x, circle.y, circle.size);
           }
-        }
+        };
 
         sketch.mousePressed = () => {
           if (
@@ -38,20 +38,20 @@
                 sketch.random(100, 255),
                 sketch.random(100, 255),
                 sketch.random(100, 255),
-                200,
-              ),
-            })
+                200
+              )
+            });
           }
-        }
-      }, container)
+        };
+      }, container);
     }
 
     return () => {
       if (p5Instance) {
-        p5Instance.remove()
+        p5Instance.remove();
       }
-    }
-  })
+    };
+  });
 </script>
 
 <div class="container" bind:this={container}></div>
@@ -64,4 +64,3 @@
     height: 100%;
   }
 </style>
-

@@ -1,10 +1,10 @@
 <script lang="ts">
-  import OrbitingCircle from "$lib/animations/OrbitingCircle.svelte";
-  import ClickCircles from "$lib/animations/ClickCircles.svelte";
+  import OrbitingCircle from '$lib/animations/OrbitingCircle.svelte';
+  import ClickCircles from '$lib/animations/ClickCircles.svelte';
 
   const animations = [
-    { name: "Orbiting Circle", component: OrbitingCircle },
-    { name: "Click Circles", component: ClickCircles },
+    { name: 'Orbiting Circle', component: OrbitingCircle },
+    { name: 'Click Circles', component: ClickCircles }
   ];
 </script>
 
