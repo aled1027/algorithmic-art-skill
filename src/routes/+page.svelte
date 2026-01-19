@@ -10,6 +10,9 @@
   import BrushStrokeSimulator from '$lib/animations/BrushStrokeSimulator.svelte';
   import FractalFlame from '$lib/animations/FractalFlame.svelte';
 
+  const PAGE_SIZE = 2;
+  let currentPage = $state(0);
+
   const animations = [
     {
       name: 'Flow Field Landscape',
@@ -72,6 +75,19 @@
         'Iterated function systems generating the intricate, luminous structures seen in classic fractal flame art'
     }
   ];
+
+  const totalPages = Math.ceil(animations.length / PAGE_SIZE);
+  const paginatedAnimations = $derived(
+    animations.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE)
+  );
+
+  function prevPage() {
+    if (currentPage > 0) currentPage--;
+  }
+
+  function nextPage() {
+    if (currentPage < totalPages - 1) currentPage++;
+  }
 </script>
 
 <main class="min-h-screen bg-gray-50 px-6 py-12">
@@ -88,7 +104,7 @@
     </p>
 
     <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-      {#each animations as animation}
+      {#each paginatedAnimations as animation (animation.name)}
         <div>
           <h2 class="mb-2 text-xl font-semibold text-gray-800">
             {animation.name}
@@ -101,6 +117,26 @@
           </div>
         </div>
       {/each}
+    </div>
+
+    <div class="mt-8 flex items-center justify-center gap-4">
+      <button
+        onclick={prevPage}
+        disabled={currentPage === 0}
+        class="rounded bg-gray-200 px-4 py-2 font-medium text-gray-700 hover:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        Previous
+      </button>
+      <span class="text-gray-600">
+        Page {currentPage + 1} of {totalPages}
+      </span>
+      <button
+        onclick={nextPage}
+        disabled={currentPage === totalPages - 1}
+        class="rounded bg-gray-200 px-4 py-2 font-medium text-gray-700 hover:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        Next
+      </button>
     </div>
   </div>
 </main>
