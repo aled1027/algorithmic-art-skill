@@ -1,41 +1,13 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import p5 from "p5";
+  import OrbitingCircle from "$lib/animations/OrbitingCircle.svelte"
 
-  let container: HTMLDivElement;
-  let p5Instance: p5 | null = null;
-
-  onMount(() => {
-    if (container) {
-      p5Instance = new p5((sketch: p5) => {
-        sketch.setup = () => {
-          sketch.createCanvas(800, 600);
-        };
-
-        sketch.draw = () => {
-          sketch.background(220);
-          sketch.fill(100, 150, 255);
-          sketch.noStroke();
-          sketch.ellipse(
-            sketch.width / 2 + sketch.sin(sketch.frameCount * 0.05) * 100,
-            sketch.height / 2 + sketch.cos(sketch.frameCount * 0.05) * 100,
-            50,
-            50,
-          );
-        };
-      }, container);
-    }
-
-    return () => {
-      if (p5Instance) {
-        p5Instance.remove();
-      }
-    };
-  });
+  const animations = [
+    { name: "Orbiting Circle", component: OrbitingCircle }
+  ]
 </script>
 
 <main class="min-h-screen bg-gray-50 px-6 py-12">
-  <div class="mx-auto max-w-3xl">
+  <div class="mx-auto max-w-5xl">
     <h1 class="text-3xl font-bold text-gray-900">Algorithmic Art Gallery</h1>
     <p class="mt-2 text-gray-600">
       A gallery of p5.js animations created with the
@@ -47,6 +19,13 @@
       >.
     </p>
 
-    <div bind:this={container} class="mt-8 overflow-hidden rounded-lg shadow-lg"></div>
+    <div class="mt-8 grid gap-8">
+      {#each animations as animation}
+        <div class="rounded-xl bg-white p-4 shadow">
+          <h2 class="mb-4 text-xl font-semibold text-gray-800">{animation.name}</h2>
+          <animation.component />
+        </div>
+      {/each}
+    </div>
   </div>
 </main>
