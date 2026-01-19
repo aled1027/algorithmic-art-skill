@@ -4,11 +4,17 @@
   import FlowFieldLandscape from '$lib/animations/FlowFieldLandscape.svelte';
   import GeometricTessellation from '$lib/animations/GeometricTessellation.svelte';
   import CellularAutomata from '$lib/animations/CellularAutomata.svelte';
+  import RecursiveTree from '$lib/animations/RecursiveTree.svelte';
+  import ParticleGalaxy from '$lib/animations/ParticleGalaxy.svelte';
+  import AudioWaveforms from '$lib/animations/AudioWaveforms.svelte';
 
   const animations = [
     { name: 'Flow Field Landscape', component: FlowFieldLandscape },
+    { name: 'Recursive Tree Generator', component: RecursiveTree },
     { name: 'Geometric Tessellation', component: GeometricTessellation },
+    { name: 'Particle Galaxy', component: ParticleGalaxy },
     { name: 'Cellular Automata', component: CellularAutomata },
+    { name: 'Audio-Reactive Waveforms', component: AudioWaveforms },
     { name: 'Orbiting Circle', component: OrbitingCircle },
     { name: 'Click Circles', component: ClickCircles }
   ];
