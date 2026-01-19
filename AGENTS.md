@@ -4,7 +4,7 @@
 - **Development**: `npm run dev` (starts Vite dev server at localhost:5173)
 - **Build**: `npm run build` (production build)
 - **Check types**: `npm run check` (svelte-check with TypeScript)
-- **Watch types**: `npm run check:watch` (continuous type checking)
+- **Format**: `npm run format` (Prettier on src/**/*.{js,ts,svelte})
 - **Preview**: `npm run preview` (test production build locally)
 
 ## Architecture
@@ -19,5 +19,5 @@
 - **Imports**: Use `$lib` alias for `src/lib/` imports; ES modules only
 - **Components**: Svelte 5 syntax (runes), use `bind:` for reactive refs, `onMount` for setup
 - **Naming**: camelCase for variables/functions, PascalCase for components/types
-- **Formatting**: 2-space indentation (default SvelteKit); no semicolons (inferred)
+- **Formatting**: spaces (no tabs), single quotes, no trailing commas, 100 char width
 - **p5 lifecycle**: Always cleanup in onMount return (call `p5Instance.remove()`)
