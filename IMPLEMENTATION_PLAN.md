@@ -148,9 +148,9 @@ Each artwork follows this p5.js-in-Svelte pattern:
 | 5 | Generative Topography | ✅ | ✅ | ✅ | Complete |
 | 6 | Geometric Tessellation | ✅ | ✅ | ✅ | Complete |
 | 7 | Audio-Reactive Waveforms | ✅ | ✅ | ✅ | Complete |
-| 8 | Brush Stroke Simulator | ⬜ | ⬜ | ⬜ | Not started |
+| 8 | Brush Stroke Simulator | ✅ | ✅ | ✅ | Complete |
 | 9 | Cellular Automata Patterns | ✅ | ✅ | ✅ | Complete |
-| 10 | Fractal Flame Renderer | ⬜ | ⬜ | ⬜ | Not started |
+| 10 | Fractal Flame Renderer | ✅ | ✅ | ✅ | Complete |
 
 ---
 

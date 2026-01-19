@@ -9,6 +9,8 @@
   import AudioWaveforms from '$lib/animations/AudioWaveforms.svelte';
   import GenerativeTopography from '$lib/animations/GenerativeTopography.svelte';
   import VoronoiStainedGlass from '$lib/animations/VoronoiStainedGlass.svelte';
+  import BrushStrokeSimulator from '$lib/animations/BrushStrokeSimulator.svelte';
+  import FractalFlame from '$lib/animations/FractalFlame.svelte';
 
   const animations = [
     { name: 'Flow Field Landscape', component: FlowFieldLandscape },
@@ -18,7 +20,9 @@
     { name: 'Particle Galaxy', component: ParticleGalaxy },
     { name: 'Cellular Automata', component: CellularAutomata },
     { name: 'Audio-Reactive Waveforms', component: AudioWaveforms },
+    { name: 'Brush Stroke Simulator', component: BrushStrokeSimulator },
     { name: 'Generative Topography', component: GenerativeTopography },
+    { name: 'Fractal Flame Renderer', component: FractalFlame },
     { name: 'Orbiting Circle', component: OrbitingCircle },
     { name: 'Click Circles', component: ClickCircles }
   ];
