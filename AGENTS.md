@@ -1,27 +1,23 @@
 # AGENTS.md - Algorithmic Art Skill
 
-## Build/Test/Lint Commands
-- `npm run dev` - Start dev server on localhost:5173
-- `npm run build` - Build production bundle
-- `npm run check` - Type-check and lint with svelte-check
-- `npm run check:watch` - Watch mode for type-checking
-- `npm run preview` - Preview production build locally
+## Commands
+- **Development**: `npm run dev` (starts Vite dev server at localhost:5173)
+- **Build**: `npm run build` (production build)
+- **Check types**: `npm run check` (svelte-check with TypeScript)
+- **Watch types**: `npm run check:watch` (continuous type checking)
+- **Preview**: `npm run preview` (test production build locally)
 
-## Project Structure
-**SvelteKit project** - Modern Svelte 5 + TypeScript + Vite
+## Architecture
+- **SvelteKit 5** framework with TypeScript, Vite bundler
+- **p5.js** for algorithmic art/sketches (imported and initialized in +page.svelte)
+- **Tailwind CSS 4** for styling (@tailwindcss/vite integration)
+- Routes in `src/routes/` (file-based routing), shared code in `src/lib/`
+- Single-page app with canvas container; p5 lifecycle tied to component onMount/unmount
 
-- `src/routes/` - SvelteKit file-based routing (+page.svelte, +layout.svelte)
-- `src/lib/` - Reusable components and utilities (imported via `$lib` alias)
-- `src/lib/assets/` - Static assets
-- `src/app.d.ts` - Global TypeScript types
-- `static/` - Public static files
-- `vite.config.ts` - Vite configuration
-- `svelte.config.js` - SvelteKit configuration
-
-## Code Style & Conventions
-- **TypeScript**: Strict mode enabled, ESM modules, no .js extensions in imports
-- **Imports**: Use `$lib` alias for local imports (e.g., `import Foo from '$lib/components/Foo.svelte'`)
-- **Formatting**: SvelteKit standard; use svelte-check for validation
-- **Components**: Svelte 5 syntax (.svelte files in routes and lib)
-- **Error Handling**: Use TypeScript for compile-time safety; SvelteKit error pages in routes
-- **Naming**: kebab-case for files, PascalCase for components, camelCase for functions/variables
+## Code Style
+- **TypeScript**: strict mode enabled (`strict: true`), use explicit types
+- **Imports**: Use `$lib` alias for `src/lib/` imports; ES modules only
+- **Components**: Svelte 5 syntax (runes), use `bind:` for reactive refs, `onMount` for setup
+- **Naming**: camelCase for variables/functions, PascalCase for components/types
+- **Formatting**: 2-space indentation (default SvelteKit); no semicolons (inferred)
+- **p5 lifecycle**: Always cleanup in onMount return (call `p5Instance.remove()`)
