@@ -1,8 +1,14 @@
 <script lang="ts">
   import OrbitingCircle from '$lib/animations/OrbitingCircle.svelte';
   import ClickCircles from '$lib/animations/ClickCircles.svelte';
+  import FlowFieldLandscape from '$lib/animations/FlowFieldLandscape.svelte';
+  import GeometricTessellation from '$lib/animations/GeometricTessellation.svelte';
+  import CellularAutomata from '$lib/animations/CellularAutomata.svelte';
 
   const animations = [
+    { name: 'Flow Field Landscape', component: FlowFieldLandscape },
+    { name: 'Geometric Tessellation', component: GeometricTessellation },
+    { name: 'Cellular Automata', component: CellularAutomata },
     { name: 'Orbiting Circle', component: OrbitingCircle },
     { name: 'Click Circles', component: ClickCircles }
   ];
