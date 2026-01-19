@@ -1,11 +1,11 @@
 <script lang="ts">
-  import OrbitingCircle from "$lib/animations/OrbitingCircle.svelte"
-  import ClickCircles from "$lib/animations/ClickCircles.svelte"
+  import OrbitingCircle from "$lib/animations/OrbitingCircle.svelte";
+  import ClickCircles from "$lib/animations/ClickCircles.svelte";
 
   const animations = [
     { name: "Orbiting Circle", component: OrbitingCircle },
-    { name: "Click Circles", component: ClickCircles }
-  ]
+    { name: "Click Circles", component: ClickCircles },
+  ];
 </script>
 
 <main class="min-h-screen bg-gray-50 px-6 py-12">
@@ -21,13 +21,27 @@
       >.
     </p>
 
-    <div class="mt-8 grid gap-8">
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
       {#each animations as animation}
-        <div class="rounded-xl bg-white p-4 shadow">
-          <h2 class="mb-4 text-xl font-semibold text-gray-800">{animation.name}</h2>
-          <animation.component />
+        <div>
+          <h2 class="mb-4 text-xl font-semibold text-gray-800">
+            {animation.name}
+          </h2>
+          <div class="animation-wrapper">
+            <animation.component />
+          </div>
         </div>
       {/each}
     </div>
   </div>
 </main>
+
+<style>
+  .animation-wrapper {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+</style>

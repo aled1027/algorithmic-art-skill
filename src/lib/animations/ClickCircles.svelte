@@ -11,7 +11,7 @@
         const circles: { x: number; y: number; size: number; color: p5.Color }[] = []
 
         sketch.setup = () => {
-          sketch.createCanvas(400, 300)
+          sketch.createCanvas(container.clientWidth, container.clientHeight)
         }
 
         sketch.draw = () => {
@@ -54,4 +54,14 @@
   })
 </script>
 
-<div bind:this={container} class="overflow-hidden rounded-lg shadow-lg"></div>
+<div class="container" bind:this={container}></div>
+
+<style>
+  .container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
