@@ -101,7 +101,11 @@
         class="text-blue-600 underline hover:text-blue-800"
       >
         algorithmic art skill</a
-      >.
+      > in a single shot, no iterations or rewrites.
+    </p>
+    <p class="mt-2 text-gray-600">
+      As a result, a few of the animations have performance issues, which causes navigation issues. To maintain the
+      fidelity of the exercise, these animations are not being updated to be more performant.
     </p>
 
     <div class="mt-8">
@@ -119,7 +123,7 @@
         </div>
       {/each}
 
-      <div class="mt-8 flex items-center justify-center gap-4">
+      <div class="mt-8 flex items-center justify-center gap-4 cursor-pointer">
         <button
           onclick={prevPage}
           disabled={currentPage === 0}
@@ -133,7 +137,7 @@
         <button
           onclick={nextPage}
           disabled={currentPage === totalPages - 1}
-          class="rounded bg-gray-200 px-4 py-2 font-medium text-gray-700 hover:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+          class="cursor-pointer rounded bg-gray-200 px-4 py-2 font-medium text-gray-700 hover:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
         >
           Next
         </button>
